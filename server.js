@@ -7,16 +7,16 @@ const MongoStore = require("connect-mongo")(session);
 const methodOverride = require("method-override");
 const flash = require("express-flash");
 const logger = require("morgan");
-const connectDB = require("./config/database");
-const mainRoutes = require("./routes/main");
-const authRoutes = require("./routes/auth")
+const connectDB = require("./src/config/database");
+const mainRoutes = require("./src/routes/main");
+const authRoutes = require("./src/routes/auth")
 // const postRoutes = require("./routes/posts");
 
 //Use .env file in config folder
 require("dotenv").config();
 
 // Passport config
-require("./config/passport")(passport);
+require("./src/config/passport")(passport);
 
 //Connect To Database
 connectDB();
@@ -60,6 +60,8 @@ app.use("/auth", authRoutes);
 // app.use("/post", postRoutes);
 
 //Server Running
-app.listen(2121, () => {
-  console.log("Server is running, you better catch it!");
+const port = process.env.PORT
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+  console.log(`Press CTRL + C to stop it!`);
 });

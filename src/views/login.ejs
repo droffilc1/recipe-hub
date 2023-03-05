@@ -3,7 +3,7 @@
 <main class="container card-container">
   <div class="row justify-content-center">
     <section class="col-6 mt-5">
-      <h1>Sign in with email</h1>
+      <h1>Sign in</h1>
       <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
       <div class="alert alert-danger"><%= el.msg %></div>
       <% }) %> <% } %> <% if (locals.messages.info) { %> <%
@@ -32,10 +32,8 @@
             name="password"
           />
         </div>
-        <button type="submit" class="btn btn-success">Sign In</button><br><br>
-        <button type="submit" class="btn btn-success"><a href="/auth/google"></a>Sign in with Google</button>
-        
-                
+        <button type="submit" class="btn btn-success">Sign In</button>        
+        <a href="/auth/google" class="btn btn-success mx-4"><i class="fa-brands fa-google mx-2"></i>Google</a>                
       </form>      
     </section>
   </div>

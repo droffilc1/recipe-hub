@@ -1,0 +1,20 @@
+<%- include('partials/logged-in-header') -%>
+  <div class="container card-container">
+  <h1>Explore Recipes</h1>
+  <div class="row">
+    <% for(var i=0; i<recipes.length; i++) {%>
+    <div class="col-sm-3 mb-3 mb-sm-0">
+      <div class="card" style="width: 15rem; height: 27rem;">
+        <img src="<%= recipes[i].image%>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= recipes[i].title%></h5>
+          <p class="card-text"><i class="px-1 bi bi-heart"></i><%= recipes[i].likes.length - 1 %></p>
+          <p class="card-text"><small class="text-muted">By: <%= userName[i]%></small></p>
+          <p class="card-text"><%= recipes[i].caption %></p>          
+          <a href="/recipe/<%= recipes[i]._id%>" class="btn btn-outline-success">View Recipe</a>
+        </div>
+      </div>      
+    </div>
+    <% } %>
+  </div>
+</div>

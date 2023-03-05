@@ -1,0 +1,37 @@
+<%- include('partials/logged-in-header') -%>
+  <div class="container card-container">
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <div class="mt-2">
+          <h2>Add a recipe</h2>
+          <form action="/recipe/createRecipe" enctype="multipart/form-data" method="POST">
+            <div class="mb-3">
+              <label for="title" class="form-label">Recipe Title</label>
+              <input type="text" class="form-control" id="title" name="title">
+            </div>
+            <div class="mb-3">
+              <label for="imgUpload" class="form-label">Image</label>
+              <input type="file" class="form-control" id="imageUpload" name="file">
+            </div>
+            <div class="mb-3">
+              <label for="caption" class="form-label">Description</label>
+              <textarea class="form-control" id="caption" name="caption"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="ingredients" class="form-label">Ingredients</label>
+              <textarea class="form-control" id="ingredients" name="ingredients"
+                placeholder="Put each ingredient on its own line." rows="5"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="directions" class="form-label">Directions</label>
+              <textarea class="form-control" id="directions" name="directions"
+                placeholder="Put each step on its own line." rows="5"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-success" value="Upload">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

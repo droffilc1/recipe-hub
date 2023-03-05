@@ -10,13 +10,14 @@ const logger = require("morgan");
 const connectDB = require("./src/config/database");
 const mainRoutes = require("./src/routes/main");
 const authRoutes = require("./src/routes/auth")
-// const postRoutes = require("./routes/posts");
+const recipeRoutes = require("./src/routes/recipe");
 
 //Use .env file in config folder
 require("dotenv").config();
 
 // Passport config
 require("./src/config/passport")(passport);
+require("./src/config/googleStrategy")(passport);
 
 //Connect To Database
 connectDB();
@@ -26,7 +27,7 @@ app.set("views", "./src/views");
 app.set("view engine", "ejs");
 
 //Static Folder
-app.use(express.static("public"));
+app.use(express.static("./src/public"));
 
 //Body Parsing
 app.use(express.urlencoded({ extended: true }));
@@ -58,7 +59,7 @@ app.use(flash());
 //Setup Routes For Which The Server Is Listening
 app.use("/", mainRoutes);
 app.use("/auth", authRoutes);
-// app.use("/post", postRoutes);
+app.use("/recipe", recipeRoutes);
 
 //Server Running
 const port = process.env.PORT

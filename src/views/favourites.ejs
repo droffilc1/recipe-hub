@@ -1,0 +1,33 @@
+<%- include('partials/logged-in-header') -%>
+
+<div class="container card-container">
+  <h1>My Favourite Recipes</h1>
+  <% console.log(recipes[0]) %> 
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <% for(var i=0; i<recipes.length; i++) {%>
+      <%if(recipes[i].favourites.includes(user.id)) {%>
+    <div class="col">
+      <div class="card" style="width: 15rem; height: 20rem;">
+        <img src="<%= recipes[i].image%>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= recipes[i].title%></h5>
+          <p class="card-text"><%= recipes[i].caption %>.</p>
+          <a href="/recipe/<%= recipes[i]._id%>" class="btn btn-outline-success">View Recipe</a>
+        </div>
+      </div>      
+      <%if(recipes.user == user.id){ %>
+      <form
+        action="/recipe/deleteRecipe/<%= post.id %>?_method=DELETE"
+        method="POST"
+        class="col-3"
+      >
+        <button class="btn btn-primary fa fa-trash" type="submit"></button>
+      </form>
+      <%}%>
+    </div>
+    <% } %>
+    <% } %>
+  </div>
+  
+</div>
+

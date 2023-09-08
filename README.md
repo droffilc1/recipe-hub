@@ -6,7 +6,7 @@ A fullstack app for recipes
 Recipe hub is an app where users can add or explore recipes added by other users
 
 ## Live Demo
-For the link to the live demo, [Click here](https://memory-card-1kdi.vercel.app/) :point_left:
+For the link to the live demo, [Click here](https://recipe-hub-production.up.railway.app/) :point_left:
 
 ![recipe-hub](https://github.com/droffilc1/recipe-hub/assets/97587370/4cebcecf-5735-4019-a840-a4b31b50b2b0)
 
@@ -20,9 +20,6 @@ Incorporates everything from Create Read Update Delete (CRUD)
 * MULTER
 * MONGODB
 * VS CODE
-
-## Live Demo
-For the link to the live demo, [Click here](https://recipe-hub-production.up.railway.app/) :point_left:
 
 ## Running The Project
 To get a local copy up and running you just need to follow the following steps in your terminal;

@@ -5,6 +5,11 @@ A fullstack app for recipes
 ## Overview
 Recipe hub is an app where users can add or explore recipes added by other users
 
+## Live Demo
+For the link to the live demo, [Click here](https://memory-card-1kdi.vercel.app/) :point_left:
+
+![recipe-hub](https://github.com/droffilc1/recipe-hub/assets/97587370/4cebcecf-5735-4019-a840-a4b31b50b2b0)
+
 ## Features
 Incorporates everything from Create Read Update Delete (CRUD)
 

@@ -36,7 +36,7 @@ module.exports = {
       for(i in recipes){
         var user = await User.findById(recipes[i].user)
         users.push(user.userName)
-    }  
+    }
       res.render('feed.ejs', {recipes: recipes, userName: users,user: req.user})
     }catch(err){
       console.log(err)
@@ -58,7 +58,7 @@ module.exports = {
       await Recipe.create({
         title: req.body.title,
         image: result.secure_url,
-        cloudinaryId: result.public_id,        
+        cloudinaryId: result.public_id,
         ingredients: req.body.ingredients.trim().split('\n'),
         directions: req.body.directions.trim().split('\n'),
         likes: 0,
@@ -69,7 +69,7 @@ module.exports = {
     } catch (err) {
       console.log(err);
     }
-  },  
+  },
   likeRecipe: async (req, res)=>{
     let liked = false
     try{
@@ -77,28 +77,26 @@ module.exports = {
       liked = (recipe.likes.includes(req.user.id))
     } catch(err){
     }
-   
+
     if(liked){
       try{
         await Recipe.findOneAndUpdate({_id:req.params.id},
           {
             $pull : {'likes' : req.user.id}
           })
-          
+
           console.log('Removed user from likes array')
           res.redirect('back')
         }catch(err){
           console.log(err)
         }
       }
-      
       else{
         try{
           await Recipe.findOneAndUpdate({_id:req.params.id},
             {
               $addToSet : {'likes' : req.user.id}
             })
-            
             console.log('Added user to likes array')
             res.redirect(`back`)
         }catch(err){
@@ -113,28 +111,24 @@ module.exports = {
         bookmarked = (recipe.bookmarks.includes(req.user.id))
       } catch(err){
       }
-      
       if(bookmarked){
         try{
           await Recipe.findOneAndUpdate({_id:req.params.id},
             {
               $pull : {'favourites' : req.user.id}
             })
-            
             console.log('Removed user from favourites array')
             res.redirect('back')
           }catch(err){
             console.log(err)
           }
         }
-       
         else{
           try{
             await Recipe.findOneAndUpdate({_id:req.params.id},
               {
                 $addToSet : {'favourites' : req.user.id}
               })
-              
               console.log('Added user to favourites array')
               res.redirect(`back`)
           }catch(err){
@@ -144,11 +138,10 @@ module.exports = {
       },
   deleteRecipe: async (req, res) => {
     try {
-      
       let recipe = await Recipe.findById({ _id: req.params.id });
-      
+
       await cloudinary.uploader.destroy(recipe.cloudinaryId);
-      
+
       await Recipe.remove({ _id: req.params.id });
       console.log("Deleted Recipe");
       res.redirect("/profile");

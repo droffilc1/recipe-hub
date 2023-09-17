@@ -1,13 +1,12 @@
 <%- include('partials/logged-in-header') -%>
   <div class="container card-container">
     <div class="row">
+      </p>
       <h1>
         <%= recipe.title %>
       </h1>
       <p>
         <%= recipe.caption %>
-      </p>
-      <p>By: <%= user.userName %>
       </p>
       <div class="col-md-6">
         <img src="<%= recipe.image%>" class="img-fluid" alt="Responsive image">
@@ -21,8 +20,8 @@
           </h3>
           <form class="col justify-content-end" action="/recipe/favouriteRecipe/<%= recipe.id %>?_method=PUT"
             method="POST">
-            <button class="<%if(recipe.favourites.includes(user.id)){ %> bi bi-bookmark-fill <%} else { %> bi bi-bookmark <%}%>
-            btn btn-success" type="submit">Bookmark</button>
+            <button class="<%if(recipe.favourites.includes(user.id)){ %> bi bi-bookmark-fill yellow-color <%} else { %> bi bi-bookmark yellow-color <%}%>
+            btn btn-success" type="submit"></button>
           </form>
           <%if(recipe.user==user.id){ %>
             <form action="/recipe/deleteRecipe/<%= recipe.id %>?_method=DELETE" method="POST" class="col-3">

@@ -10,10 +10,10 @@
           <h5 class="card-title"><%= recipes[i].title%></h5>
           <p class="card-text"><i class="px-1 bi bi-heart"></i><%= recipes[i].likes.length - 1 %></p>
           <p class="card-text"><small class="text-muted">By: <%= userName[i]%></small></p>
-          <p class="card-text"><%= recipes[i].caption %></p>          
+          <p class="card-text"><%= recipes[i].caption %></p>
           <a href="/recipe/<%= recipes[i]._id%>" class="btn btn-outline-success">View Recipe</a>
         </div>
-      </div>      
+      </div>
     </div>
     <% } %>
   </div>

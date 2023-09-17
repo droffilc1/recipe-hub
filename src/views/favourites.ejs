@@ -2,7 +2,7 @@
 
 <div class="container card-container">
   <h1>My Favourite Recipes</h1>
-  <% console.log(recipes[0]) %> 
+  <% console.log(recipes[0]) %>
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <% for(var i=0; i<recipes.length; i++) {%>
       <%if(recipes[i].favourites.includes(user.id)) {%>
@@ -14,7 +14,7 @@
           <p class="card-text"><%= recipes[i].caption %>.</p>
           <a href="/recipe/<%= recipes[i]._id%>" class="btn btn-outline-success">View Recipe</a>
         </div>
-      </div>      
+      </div>
       <%if(recipes.user == user.id){ %>
       <form
         action="/recipe/deleteRecipe/<%= post.id %>?_method=DELETE"
@@ -28,6 +28,5 @@
     <% } %>
     <% } %>
   </div>
-  
 </div>
 

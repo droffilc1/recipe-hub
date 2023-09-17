@@ -9,7 +9,6 @@ const flash = require("express-flash");
 const logger = require("morgan");
 const connectDB = require("./src/config/database");
 const mainRoutes = require("./src/routes/main");
-const authRoutes = require("./src/routes/auth")
 const recipeRoutes = require("./src/routes/recipe");
 
 //Use .env file in config folder
@@ -17,7 +16,6 @@ require("dotenv").config();
 
 // Passport config
 require("./src/config/passport")(passport);
-require("./src/config/googleStrategy")(passport);
 
 //Connect To Database
 connectDB();
@@ -58,7 +56,6 @@ app.use(flash());
 
 //Setup Routes For Which The Server Is Listening
 app.use("/", mainRoutes);
-app.use("/auth", authRoutes);
 app.use("/recipe", recipeRoutes);
 
 //Server Running

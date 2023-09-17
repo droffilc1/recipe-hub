@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
 html,
-body {       
+body {
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;
 }
@@ -13,7 +13,7 @@ body {
 }
 
 .card-container{
-  margin-top: 3rem;  
+  margin-top: 3rem;
 }
 
 .btn-nav{
@@ -27,6 +27,7 @@ body {
 
 .btn-liked{
     color: #f03566;
+    background: #ffff;
   }
 
 .btn-bookmarked{

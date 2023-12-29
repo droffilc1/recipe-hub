@@ -57,7 +57,7 @@ Introduction to the intellectual enterprises of computer science and the art of 
 
 Thank you for all CS50.
 
-Where I get CS50 course? https://cs50.harvard.edu/x/2020/
+Where I get CS50 course? https://cs50.harvard.edu/x/2023
 
 ## Contributors
 

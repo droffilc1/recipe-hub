@@ -11,6 +11,9 @@ For the link to the live demo, [Click here](https://brainy-ruby-jellyfish.cyclic
 ## Video demo:
 [Click here](https://www.youtube.com/watch?v=cI7jjmrHm4A) 👈
 
+### Description:
+Recipe hub is an app where users can add or explore recipes added by other users. Users can login to their profile and find their list of recipes. They can add new recipes via form, which they can then edit or delete all recipes in their profile
+
 ![recipe-hub](https://github.com/droffilc1/recipe-hub/assets/97587370/4cebcecf-5735-4019-a840-a4b31b50b2b0)
 
 ## Features

@@ -6,7 +6,7 @@ A fullstack app for recipes
 Recipe hub is an app where users can add or explore recipes added by other users
 
 ## Live Demo
-For the link to the live demo, [Click here](https://brainy-ruby-jellyfish.cyclic.app/) :point_left:
+For the link to the live demo, [Click here](https://recipe-hub-pi.vercel.app/) :point_left:
 
 ## Video demo:
 [Click here](https://www.youtube.com/watch?v=cI7jjmrHm4A) 👈

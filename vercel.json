@@ -7,6 +7,10 @@
       "config": {
         "includeFiles": ["src/**/*.ejs", "src/public/**/*"]
       }
+    },
+    {
+      "src": "public/**/*",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -14,11 +18,5 @@
       "src": "/(.*)",
       "dest": "/server.js"
     }
-  ],
-  "output": {
-    "static": {
-      "src": "public/**/*",
-      "dest": "/public"
-    }
-  }
+  ]
 }

@@ -1,5 +1,5 @@
 {
-  "name": "recipe-hub-demo",
+  "name": "recipe-hub",
   "version": "1.0.0",
   "description": "100Devs 100hours Project",
   "main": "server.js",

@@ -59,7 +59,7 @@ app.use("/", mainRoutes);
 app.use("/recipe", recipeRoutes);
 
 //Server Running
-const port = process.env.PORT
+const port = process.env.PORT || 3000
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
   console.log(`Press CTRL + C to stop it!`);
